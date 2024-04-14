@@ -60,7 +60,7 @@ ${generate_sequence()}
 
 
 [S'inscrire](https://bit.ly/3NJ4vy0)
-[Comment jouer](https://t.me/xbetmine/131)
+[Comment jouer](https://t.me/c/2020472898/2)
 `;
 
   // Options du clavier inline
@@ -68,7 +68,7 @@ ${generate_sequence()}
     inline_keyboard: [
       [
         { text: 'S\'inscrire', url: 'https://bit.ly/3NJ4vy0' },
-        { text: 'Comment jouer', url: 'https://t.me/xbetmine/131' }
+        { text: 'Comment jouer', url: 'https://t.me/c/2020472898/2' }
       ]
     ]
   };
@@ -87,7 +87,7 @@ ${generate_sequence()}
 const scheduledTimes = '*/5 8-23 * * *';
 
 schedule.scheduleJob(scheduledTimes, () => {
-  sendSequenceToChannel('@xbetmine'); // Remplacez par l'identifiant de votre canal
+  sendSequenceToChannel('@xbetGmine'); // Remplacez par l'identifiant de votre canal
 });
 
 // Gérer la commande /start
@@ -113,7 +113,7 @@ bot.on('callback_query', (query) => {
   if (query.data === 'voir_la_pomme') {
     sendSequenceToChannel(chatId);
   } else if (query.data === 'test_message') {
-    sendSequenceToChannel('@xbetmine'); // Envoi de séquence au canal
+    sendSequenceToChannel('@xbetGmine'); // Envoi de séquence au canal
   }
 });
 
