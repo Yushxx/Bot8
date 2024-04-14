@@ -67,8 +67,14 @@ ${generate_sequence()}
   const inlineKeyboard = {
     inline_keyboard: [
       [
+
+
+
+{ text: 'Tutoriel♦️, url: 'https://t.me/c/2020472898/2' },
+         
+
+
         
-        { text: 'Tutoriel♦️, url: 'https://t.me/c/2020472898/2' }
       ]
     ]
   };
