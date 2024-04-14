@@ -70,7 +70,8 @@ ${generate_sequence()}
 
 
 
-{ text: 'Tutoriel♦️, url: 'https://t.me/c/2020472898/2' },
+{ text: 'S\'inscrire', url: 'https://bit.ly/3NJ4vy0' },
+        { text: 'Comment jouer', url: 'https://t.me/c/2020472898/2' }
          
 
 
