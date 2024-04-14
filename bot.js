@@ -79,7 +79,7 @@ ${generate_sequence()}
     reply_markup: inlineKeyboard
   };
 
-  // Envoi du message dans le canal
+  // Envoi du message dans le canal spécifié
   bot.sendMessage(chatId, sequenceMessage, options);
 }
 
@@ -87,7 +87,8 @@ ${generate_sequence()}
 const scheduledTimes = '*/5 8-23 * * *';
 
 schedule.scheduleJob(scheduledTimes, () => {
-  sendSequenceToChannel('@xbetmine'); // Remplacez par l'identifiant de votre canal
+  // Remplacez 'votre_chat_id' par l'identifiant de votre canal privé
+  sendSequenceToChannel('+S3XsDyDicqlhMTY0');
 });
 
 // Gérer la commande /start
@@ -113,7 +114,8 @@ bot.on('callback_query', (query) => {
   if (query.data === 'voir_la_pomme') {
     sendSequenceToChannel(chatId);
   } else if (query.data === 'test_message') {
-    sendSequenceToChannel('@xbetmine'); // Envoi de séquence au canal
+    // Remplacez 'votre_chat_id' par l'identifiant de votre canal privé
+    sendSequenceToChannel('votre_chat_id'); // Envoi de séquence au canal privé
   }
 });
 
