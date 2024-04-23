@@ -60,7 +60,7 @@ ${generate_sequence()}
 
 
 [S'inscrire](https://bit.ly/3NJ4vy0)
-[Comment jouer](https://t.me/c/1594256026/131)
+[Comment jouer](https://t.me/c/1594256026/1617)
 `;
 
   // Options du clavier inline
@@ -71,7 +71,7 @@ ${generate_sequence()}
 
 
 { text: 'S\'inscrire', url: 'https://bit.ly/3NJ4vy0' },
-        { text: 'Comment jouer', url: 'https://t.me/c/1594256026/131' }
+        { text: 'Comment jouer', url: 'https://t.me/c/1594256026/1617' }
          
 
 
