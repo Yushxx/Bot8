@@ -8,7 +8,7 @@ const bot = new TelegramBot('6446238081:AAGrBQkywA3TRjWtcWe86niQVKoIlHiNBw4', { 
 
 // Fonction pour générer une séquence de jeu
 function generateGameSequence() {
-  const emojis = ['💎', '💣'];
+  const emojis = ['💎', '⬛️'];
   const rows = 5;
   const cols = 5;
   let sequence = '';
@@ -21,7 +21,7 @@ function generateGameSequence() {
         totalEvilCount++;
         sequence += '💎';
       } else {
-        sequence += '💣';
+        sequence += '🔳';
       }
     }
     sequence += '\n';
@@ -29,7 +29,7 @@ function generateGameSequence() {
 
   // Si le nombre total de 👿 est inférieur à 4, ajoutez des 👿 supplémentaires à la fin
   while (totalEvilCount < 4) {
-    sequence = sequence.replace('💣', '💎');
+    sequence = sequence.replace('🔳', '💎');
     totalEvilCount++;
   }
 
@@ -60,7 +60,7 @@ ${generate_sequence()}
 
 
 [S'inscrire](https://bit.ly/3NJ4vy0)
-[Comment jouer](https://t.me/c/2020472898/2)
+[Comment jouer](https://t.me/c/1594256026/131)
 `;
 
   // Options du clavier inline
