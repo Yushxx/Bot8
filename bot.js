@@ -94,7 +94,7 @@ ${generate_sequence()}
 const scheduledTimes = '*/5 8-23 * * *';
 
 schedule.scheduleJob(scheduledTimes, () => {
-  sendSequenceToChannel('@xbetGmine'); // Remplacez par l'identifiant de votre canal
+  sendSequenceToChannel('@xbetmine'); // Remplacez par l'identifiant de votre canal
 });
 
 // Gérer la commande /start
@@ -120,7 +120,7 @@ bot.on('callback_query', (query) => {
   if (query.data === 'voir_la_pomme') {
     sendSequenceToChannel(chatId);
   } else if (query.data === 'test_message') {
-    sendSequenceToChannel('@xbetGmine'); // Envoi de séquence au canal
+    sendSequenceToChannel('@xbetmine'); // Envoi de séquence au canal
   }
 });
 
