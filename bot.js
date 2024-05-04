@@ -4,128 +4,160 @@ const schedule = require('node-schedule');
 const http = require('http');
 
 // Remplacez 'YOUR_BOT_TOKEN' par le token de votre bot Telegram
-const bot = new TelegramBot('6446238081:AAGrBQkywA3TRjWtcWe86niQVKoIlHiNBw4', { polling: true });
+const bot = new TelegramBot('6699800064:AAFfRByGTS9ecNJCA_VDdaNLxSVnEj_O8ss', { polling: true });
 
-// Fonction pour générer une séquence de jeu
-function generateGameSequence() {
-  const emojis = ['💎', '🟫'];
-  const rows = 5;
-  const cols = 5;
-  let sequence = '';
-  let totalEvilCount = 0;
+// Fonction pour générer une séquence de jeu de mines
+function generateMineSequence() {
+    const emojis = ['💎', '🟫']; // 💎 représente une mine, 🟫 représente une case sûre
+    const rows = 5;
+    const cols = 5;
+    let sequence = '';
+    let totalMineCount = 0;
 
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
-      const isEvilEmoji = Math.random() < 0.2 && totalEvilCount < 5;
-      if (isEvilEmoji) {
-        totalEvilCount++;
-        sequence += '💎';
-      } else {
-        sequence += '🟫';
-      }
+    // Créer une séquence de 5x5 cases
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            // Déterminer si la case contient une mine ou non
+            const isMine = Math.random() < 0.2 && totalMineCount < 5; // 20% de chance d'être une mine
+            if (isMine) {
+                totalMineCount++;
+                sequence += '💎'; // Ajouter une mine
+            } else {
+                sequence += '🟫'; // Ajouter une case sûre
+            }
+        }
+        sequence += '\n'; // Passer à la ligne pour la prochaine rangée
     }
-    sequence += '\n';
-  }
 
-  // Si le nombre total de 👿 est inférieur à 4, ajoutez des 👿 supplémentaires à la fin
-  while (totalEvilCount < 4) {
-    sequence = sequence.replace('🟫', '💎');
-    totalEvilCount++;
-  }
+    // Si le nombre total de mines est inférieur à 4, ajouter des mines supplémentaires à la fin
+    while (totalMineCount < 4) {
+        sequence = sequence.replace('🟫', '💎'); // Remplacer une case sûre par une mine
+        totalMineCount++;
+    }
 
-  return sequence;
+    return sequence;
 }
 
-// Remplace la fonction generate_sequence par generateGameSequence
-function generate_sequence() {
-  return generateGameSequence();
+// Fonction pour générer une séquence de jeu Apple
+function generateAppleSequence() {
+    const sequence = ["🟩", "🟩", "🟩", "🟩", "🍎"];
+    for (let i = sequence.length - 1; i > 0; i--) {
+        const j = random(0, i);
+        [sequence[i], sequence[j]] = [sequence[j], sequence[i]]; // Permuter les éléments
+    }
+    return sequence.join(" ");
 }
 
-// Modèle de séquence
-const sequenceTemplate = `
+// Modèles de séquences
+const sequenceTemplateMine = `
 🔔 CONFIRMED ENTRY!
 💣 Mines : 3
 🔐 Attempts: 3
-⏰ Valide en: 5 minutes
+⏰ Validity: 5 minutes
 `;
 
-// Fonction pour envoyer une séquence dans le canal
-function sendSequenceToChannel(chatId) {
-  const sequenceMessage = `
-${sequenceTemplate}
-${generate_sequence()}
+const sequenceTemplateApple = `
+🔔 CONFIRMED ENTRY!
+🍎 Apple : 3
+🔐 Attempts: 3
+⏰ Validity: 5 minutes
+`;
 
+// Fonction pour envoyer une séquence de jeu de mines dans le canal Mine
+function sendSequenceToMineChannel(chatId) {
+    const sequenceMessage = `
+${sequenceTemplateMine}
+${generateMineSequence()}
 
 🚨 FONCTIONNE UNIQUEMENT SUR 1XBET & LINEBET AVEC LE CODE PROMO Free221  ✅️ !
-
 
 [S'inscrire](https://bit.ly/3NJ4vy0)
 [Comment jouer](https://t.me/c/1594256026/1617)
 `;
 
-  // Options du clavier inline
-  const inlineKeyboard = {
-    inline_keyboard: [
-      [
+    // Options du clavier inline
+    const inlineKeyboard = {
+        inline_keyboard: [
+            [
+                { text: 'S\'inscrire', url: 'https://bit.ly/3NJ4vy0' },
+                { text: 'Comment jouer', url: 'https://t.me/c/1594256026/1617' }
+            ]
+        ]
+    };
 
-
-
-{ text: 'S\'inscrire', url: 'https://bit.ly/3NJ4vy0' },
-        { text: 'Comment jouer', url: 'https://t.me/c/1594256026/1617' }
-         
-
-
-        
-      ]
-    ]
-  };
-
-  const options = {
-    parse_mode: 'Markdown',
-    disable_web_page_preview: true,
-    reply_markup: inlineKeyboard
-  };
-
-  // Envoi du message dans le canal
-  bot.sendMessage(chatId, sequenceMessage, options);
+    // Envoi du message dans le canal Mine
+    bot.sendMessage(chatId, sequenceMessage, { parse_mode: 'Markdown', reply_markup: inlineKeyboard });
 }
 
-// Planification des envois de séquences
-const scheduledTimes = '*/5 8-23 * * *';
+// Fonction pour envoyer une séquence de jeu Apple dans le canal Apple
+function sendSequenceToAppleChannel(chatId) {
+    const sequenceMessage = `
+${sequenceTemplateApple}
+2.41:${generateAppleSequence()}
+1.93:${generateAppleSequence()}
+1.54:${generateAppleSequence()}
+1.23:${generateAppleSequence()}
 
-schedule.scheduleJob(scheduledTimes, () => {
-  sendSequenceToChannel('@xbetmine'); // Remplacez par l'identifiant de votre canal
+🚨 *Attention* the signals only work on [1xbet](https://bit.ly/3v6rgFc) and linebet with the promo code *Free221* ✅️!
+
+[Register on linebet](https://bit.ly/3v6rgFc)
+`;
+
+    // Options du clavier inline
+    const inlineKeyboard = {
+        inline_keyboard: [
+            [
+                { text: 'register  ',url: 'https://bit.ly/3NJ4vy0' },
+                { text: 'How to play', url: 'https://t.me/gbapple/2033' }
+            ]
+        ]
+    };
+
+    // Envoi du message dans le canal Apple
+    bot.sendMessage(chatId, sequenceMessage, { parse_mode: 'Markdown', reply_markup: inlineKeyboard });
+}
+
+// Planification des envois de séquences pour le canal Mine
+const scheduledTimesMine = '*/5 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
+schedule.scheduleJob(scheduledTimesMine, () => {
+    sendSequenceToMineChannel('-1001594256026'); // Canal Mine ID
+});
+
+// Planification des envois de séquences pour le canal Apple
+const scheduledTimesApple = '*/5 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
+schedule.scheduleJob(scheduledTimesApple, () => {
+    sendSequenceToAppleChannel('-1002035790146'); // Canal Apple ID
 });
 
 // Gérer la commande /start
 bot.onText(/\/start/, (msg) => {
-  const chatId = msg.chat.id;
-  const inlineKeyboard = {
-    inline_keyboard: [
-      [
-        { text: 'Voir la pomme', callback_data: 'voir_la_pomme' },
-        { text: 'Test', callback_data: 'test_message' } // Bouton de test
-      ]
-    ]
-  };
-  const replyMarkup = { reply_markup: inlineKeyboard };
+    const chatId = msg.chat.id;
+    const inlineKeyboard = {
+        inline_keyboard: [
+            [
+                { text: 'Voir la pomme', callback_data: 'voir_la_pomme' },
+                { text: 'Test', callback_data: 'test_message' } // Bouton de test
+            ]
+        ]
+    };
+    const replyMarkup = { reply_markup: inlineKeyboard };
 
-  bot.sendMessage(chatId, 'Cliquez sur "Voir la pomme" pour générer les séquences :', replyMarkup);
+    bot.sendMessage(chatId, 'Cliquez sur "Voir la pomme" pour générer les séquences :', replyMarkup);
 });
 
 // Gérer le clic sur le bouton "Voir la pomme" ou "Test"
 bot.on('callback_query', (query) => {
-  const chatId = query.message.chat.id;
+    const chatId = query.message.chat.id;
 
-  if (query.data === 'voir_la_pomme') {
-    sendSequenceToChannel(chatId);
-  } else if (query.data === 'test_message') {
-    sendSequenceToChannel('@xbetmine'); // Envoi de séquence au canal
-  }
+    if (query.data === 'voir_la_pomme') {
+        sendSequenceToAppleChannel(chatId);
+    } else if (query.data === 'test_message') {
+        sendSequenceToMineChannel(chatId); // Envoi de séquence au canal Mine pour le test
+    }
 });
 
 // Code keep_alive pour éviter que le bot ne s'endorme
 http.createServer(function (req, res) {
-  res.write("I'm alive");
-  res.end();
+    res.write("I'm alive");
+    res.end();
 }).listen(8080);
