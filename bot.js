@@ -108,7 +108,7 @@ ${sequenceTemplateApple}
         inline_keyboard: [
             [
                 { text: 'register  ',url: 'https://bit.ly/3NJ4vy0' },
-                { text: 'How to play', url: 'https://t.me/gbapple/2033' }
+                { text: 'How to play', url: 'https://t.me/c/2035790146/2033' }
             ]
         ]
     };
