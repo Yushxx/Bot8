@@ -69,7 +69,7 @@ function sendSequenceToMineChannel(chatId) {
 ${sequenceTemplateMine}
 ${generateMineSequence()}
 
-🚨 FONCTIONNE UNIQUEMENT SUR 1XBET, MELBET & LINEBET AVEC LE CODE PROMO \`ssddd\` ZFree221✅️ !
+🚨 FONCTIONNE UNIQUEMENT SUR 1XBET, MELBET & LINEBET AVEC LE CODE PROMO \`ZFree221\` ✅️ !
 
 [S'inscrire](https://bit.ly/3NJ4vy0)
 [Comment jouer](https://t.me/c/1594256026/1617)
@@ -98,7 +98,7 @@ ${sequenceTemplateApple}
 1.54:${generateAppleSequence()}
 1.23:${generateAppleSequence()}
 
-🚨 *Attention* les signaux ne fonctionnent que sur [Melbet](https://bit.ly/3Wk9323), 1xbet et Linebet avec le code promo *ZFree221* ✅️!
+🚨 *Attention* les signaux ne fonctionnent que sur [Melbet](https://bit.ly/3Wk9323), 1xbet et Linebet avec le code promo \`*ZFree221*\` ✅️!
 
 [Register on linebet](https://bit.ly/3v6rgFc)
 `;
