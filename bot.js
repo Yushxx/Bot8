@@ -69,7 +69,7 @@ function sendSequenceToMineChannel(chatId) {
 ${sequenceTemplateMine}
 ${generateMineSequence()}
 
-🚨 FONCTIONNE UNIQUEMENT SUR 1XBET & LINEBET AVEC LE CODE PROMO Free221  ✅️ !
+🚨 FONCTIONNE UNIQUEMENT SUR 1XBET, MELBET & LINEBET  AVEC LE CODE PROMO `ZFree22`   ✅️ !
 
 [S'inscrire](https://bit.ly/3NJ4vy0)
 [Comment jouer](https://t.me/c/1594256026/1617)
@@ -118,13 +118,13 @@ ${sequenceTemplateApple}
 }
 
 // Planification des envois de séquences pour le canal Mine
-const scheduledTimesMine = '*/5 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
+const scheduledTimesMine = '*/20 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
 schedule.scheduleJob(scheduledTimesMine, () => {
     sendSequenceToMineChannel('-1001594256026'); // Canal Mine ID
 });
 
 // Planification des envois de séquences pour le canal Apple
-const scheduledTimesApple = '*/5 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
+const scheduledTimesApple = '*/25 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
 schedule.scheduleJob(scheduledTimesApple, () => {
     sendSequenceToAppleChannel('-1002035790146'); // Canal Apple ID
 });
