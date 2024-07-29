@@ -98,7 +98,7 @@ ${sequenceTemplateApple}
 1.54:${generateAppleSequence()}
 1.23:${generateAppleSequence()}
 
-🚨 *Attention* the signals only work on [1xbet](https://bit.ly/3v6rgFc) and linebet with the promo code *Free221* ✅️!
+🚨 *Attention* the signals only work on [Melbet](https://bit.ly/3Wk9323) 1xbet  and linebet with the promo code *ZFree221* ✅️!
 
 [Register on linebet](https://bit.ly/3v6rgFc)
 `;
@@ -108,7 +108,7 @@ ${sequenceTemplateApple}
         inline_keyboard: [
             [
                 { text: 'register  ',url: 'https://bit.ly/3NJ4vy0' },
-                { text: 'How to play', url: 'https://t.me/gbapple/2033' }
+                { text: 'How to play', url: 'https://t.me/c/2035790146/9350' }
             ]
         ]
     };
