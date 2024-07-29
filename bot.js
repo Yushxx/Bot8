@@ -98,17 +98,17 @@ ${sequenceTemplateApple}
 1.54:${generateAppleSequence()}
 1.23:${generateAppleSequence()}
 
-🚨 *Attention* the signals only work on [1xbet](https://bit.ly/3v6rgFc) and linebet with the promo code *Free221* ✅️!
+🚨 *Attention* the signals only work on [Melbet](https://bit.ly/3Wk9323) 1xbet  and linebet  with the promo code *ZFree221* ✅️!
 
-[Register on linebet](https://bit.ly/3v6rgFc)
+[Register on melbet](https://bit.ly/3Wk9323)
 `;
 
     // Options du clavier inline
     const inlineKeyboard = {
         inline_keyboard: [
             [
-                { text: 'register  ',url: 'https://bit.ly/3NJ4vy0' },
-                { text: 'How to play', url: 'https://t.me/c/2035790146/2033' }
+                { text: 'Linebet',url: 'https://bit.ly/3WEhtl4' },
+                { text: 'Melbet, url: 'https://bit.ly/3W2qMtB' }
             ]
         ]
     };
@@ -118,13 +118,13 @@ ${sequenceTemplateApple}
 }
 
 // Planification des envois de séquences pour le canal Mine
-const scheduledTimesMine = '*/5 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
+const scheduledTimesMine = '*/20 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
 schedule.scheduleJob(scheduledTimesMine, () => {
     sendSequenceToMineChannel('-1001594256026'); // Canal Mine ID
 });
 
 // Planification des envois de séquences pour le canal Apple
-const scheduledTimesApple = '*/5 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
+const scheduledTimesApple = '*/30 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
 schedule.scheduleJob(scheduledTimesApple, () => {
     sendSequenceToAppleChannel('-1002035790146'); // Canal Apple ID
 });
