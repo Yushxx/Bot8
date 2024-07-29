@@ -69,7 +69,7 @@ function sendSequenceToMineChannel(chatId) {
 ${sequenceTemplateMine}
 ${generateMineSequence()}
 
-🚨 FONCTIONNE UNIQUEMENT SUR 1XBET, MELBET & LINEBET  AVEC LE CODE PROMO `ZFree22`   ✅️ !
+🚨 FONCTIONNE UNIQUEMENT SUR 1XBET, MELBET & LINEBET AVEC LE CODE PROMO `ZFree22` ✅️ !
 
 [S'inscrire](https://bit.ly/3NJ4vy0)
 [Comment jouer](https://t.me/c/1594256026/1617)
@@ -98,7 +98,7 @@ ${sequenceTemplateApple}
 1.54:${generateAppleSequence()}
 1.23:${generateAppleSequence()}
 
-🚨 *Attention* the signals only work on [Melbet](https://bit.ly/3Wk9323) 1xbet  and linebet with the promo code *ZFree221* ✅️!
+🚨 *Attention* les signaux ne fonctionnent que sur [Melbet](https://bit.ly/3Wk9323), 1xbet et Linebet avec le code promo *ZFree221* ✅️!
 
 [Register on linebet](https://bit.ly/3v6rgFc)
 `;
@@ -107,7 +107,7 @@ ${sequenceTemplateApple}
     const inlineKeyboard = {
         inline_keyboard: [
             [
-                { text: 'register  ',url: 'https://bit.ly/3NJ4vy0' },
+                { text: 'Register', url: 'https://bit.ly/3v6rgFc' },
                 { text: 'How to play', url: 'https://t.me/c/2035790146/9350' }
             ]
         ]
@@ -117,14 +117,14 @@ ${sequenceTemplateApple}
     bot.sendMessage(chatId, sequenceMessage, { parse_mode: 'Markdown', reply_markup: inlineKeyboard });
 }
 
-// Planification des envois de séquences pour le canal Mine
-const scheduledTimesMine = '*/20 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
+// Planification des envois de séquences pour le canal Mine toutes les 20 minutes
+const scheduledTimesMine = '*/20 8-23 * * *'; // Toutes les 20 minutes de 8h00 à 23h00
 schedule.scheduleJob(scheduledTimesMine, () => {
     sendSequenceToMineChannel('-1001594256026'); // Canal Mine ID
 });
 
-// Planification des envois de séquences pour le canal Apple
-const scheduledTimesApple = '*/25 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
+// Planification des envois de séquences pour le canal Apple toutes les 20 minutes
+const scheduledTimesApple = '*/20 8-23 * * *'; // Toutes les 20 minutes de 8h00 à 23h00
 schedule.scheduleJob(scheduledTimesApple, () => {
     sendSequenceToAppleChannel('-1002035790146'); // Canal Apple ID
 });
