@@ -118,13 +118,13 @@ ${sequenceTemplateApple}
 }
 
 // Planification des envois de séquences pour le canal Mine
-const scheduledTimesMine = '*/20 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
+const scheduledTimesMine = '*/5 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
 schedule.scheduleJob(scheduledTimesMine, () => {
     sendSequenceToMineChannel('-1001594256026'); // Canal Mine ID
 });
 
 // Planification des envois de séquences pour le canal Apple
-const scheduledTimesApple = '*/30 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
+const scheduledTimesApple = '*/5 8-23 * * *'; // Toutes les 5 minutes de 8h00 à 23h00
 schedule.scheduleJob(scheduledTimesApple, () => {
     sendSequenceToAppleChannel('-1002035790146'); // Canal Apple ID
 });
