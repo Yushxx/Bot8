@@ -98,7 +98,7 @@ ${sequenceTemplateApple}
 1.54:${generateAppleSequence()}
 1.23:${generateAppleSequence()}
 
-🚨 *Attention* les signaux ne fonctionnent que sur [Melbet](https://bit.ly/3Wk9323), 1xbet et Linebet avec le code promo \`ZFree221\` ✅️!
+🚨 *Attention* the signals only work on [Melbet](https://bit.ly/3Wk9323), 1xbet and Linebet with promo code \`ZFree221\` ✅️!
 
 [Register on linebet](https://bit.ly/3v6rgFc)
 `;
