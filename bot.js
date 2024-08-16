@@ -100,7 +100,7 @@ ${sequenceTemplateApple}
 
 🚨 *Attention* the signals only work on [Melbet](https://bit.ly/3Wk9323), 1xbet and Linebet with promo code \`ZFree221\` ✅️!
 
-[Register on linebet](https://bit.ly/3v6rgFc)
+[tuto french](https://t.me/c/2035790146/9350)
 `;
 
     // Options du clavier inline
@@ -108,7 +108,7 @@ ${sequenceTemplateApple}
         inline_keyboard: [
             [
                 { text: 'Register', url: 'https://bit.ly/3v6rgFc' },
-                { text: 'How to play', url: 'https://t.me/c/2035790146/9350' }
+                { text: 'How to play', url: 'https://t.me/c/2035790146/9606' }
             ]
         ]
     };
