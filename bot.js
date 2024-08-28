@@ -86,7 +86,11 @@ ${generateMineSequence()}
     };
 
     // Envoi du message dans le canal Mine
-    bot.sendMessage(chatId, sequenceMessage, { parse_mode: 'Markdown', reply_markup: inlineKeyboard });
+    try {
+        bot.sendMessage(chatId, sequenceMessage, { parse_mode: 'Markdown', reply_markup: inlineKeyboard });
+    } catch (error) {
+        console.error(`Erreur lors de l'envoi du message: ${error.message}`);
+    }
 }
 
 // Fonction pour envoyer une séquence de jeu Apple dans le canal Apple
@@ -114,10 +118,12 @@ ${sequenceTemplateApple}
     };
 
     // Envoi du message dans le canal Apple
-    bot.sendMessage(chatId, sequenceMessage, { parse_mode: 'Markdown', reply_markup: inlineKeyboard });
+    try {
+        bot.sendMessage(chatId, sequenceMessage, { parse_mode: 'Markdown', reply_markup: inlineKeyboard });
+    } catch (error) {
+        console.error(`Erreur lors de l'envoi du message: ${error.message}`);
+    }
 }
-
-const schedule = require('node-schedule');
 
 // Planification des signaux pour la session du matin (8h00 - 13h00)
 const scheduledTimesMorning = ['0 8 * * *', '0 10 * * *', '0 12 * * *'];
@@ -145,7 +151,6 @@ scheduledTimesNight.forEach(time => {
         sendSequenceToAppleChannel('-1002035790146'); // Canal Apple ID
     });
 });
-
 
 // Gérer la commande /start
 bot.onText(/\/start/, (msg) => {
