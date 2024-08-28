@@ -51,15 +51,15 @@ function generateAppleSequence() {
 // Modèles de séquences
 const sequenceTemplateMine = `
 🔔 CONFIRMED ENTRY!
-💣 Mines : 3
-🔐 Attempts: 3
+💣 Mines : 4
+🔐 Attempts: 4
 ⏰ Validity: 5 minutes
 `;
 
 const sequenceTemplateApple = `
 🔔 CONFIRMED ENTRY!
-🍎 Apple : 3
-🔐 Attempts: 3
+🍎 Apple : 4
+🔐 Attempts: 4
 ⏰ Validity: 5 minutes
 `;
 
