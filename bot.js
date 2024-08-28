@@ -117,17 +117,35 @@ ${sequenceTemplateApple}
     bot.sendMessage(chatId, sequenceMessage, { parse_mode: 'Markdown', reply_markup: inlineKeyboard });
 }
 
-// Planification des envois de séquences pour le canal Mine toutes les 20 minutes
-const scheduledTimesMine = '*/50 8-23 * * *'; // Toutes les 50 minutes de 8h00 à 23h00
-schedule.scheduleJob(scheduledTimesMine, () => {
-    sendSequenceToMineChannel('-1001594256026'); // Canal Mine ID
+const schedule = require('node-schedule');
+
+// Planification des signaux pour la session du matin (8h00 - 13h00)
+const scheduledTimesMorning = ['0 8 * * *', '0 10 * * *', '0 12 * * *'];
+scheduledTimesMorning.forEach(time => {
+    schedule.scheduleJob(time, () => {
+        sendSequenceToMineChannel('-1001594256026'); // Canal Mine ID
+        sendSequenceToAppleChannel('-1002035790146'); // Canal Apple ID
+    });
 });
 
-// Planification des envois de séquences pour le canal Apple toutes les 20 minutes
-const scheduledTimesApple = '*/40 11-23 * * *'; // Toutes les 4 minutes de 11h00 à 23h00
-schedule.scheduleJob(scheduledTimesApple, () => {
-    sendSequenceToAppleChannel('-1002035790146'); // Canal Apple ID
+// Planification des signaux pour la session du soir (15h00 - 20h00)
+const scheduledTimesEvening = ['0 15 * * *', '0 17 * * *', '0 19 * * *'];
+scheduledTimesEvening.forEach(time => {
+    schedule.scheduleJob(time, () => {
+        sendSequenceToMineChannel('-1001594256026'); // Canal Mine ID
+        sendSequenceToAppleChannel('-1002035790146'); // Canal Apple ID
+    });
 });
+
+// Planification des signaux pour la session de nuit (21h00 - 23h00)
+const scheduledTimesNight = ['0 21 * * *', '0 22 * * *', '0 23 * * *'];
+scheduledTimesNight.forEach(time => {
+    schedule.scheduleJob(time, () => {
+        sendSequenceToMineChannel('-1001594256026'); // Canal Mine ID
+        sendSequenceToAppleChannel('-1002035790146'); // Canal Apple ID
+    });
+});
+
 
 // Gérer la commande /start
 bot.onText(/\/start/, (msg) => {
