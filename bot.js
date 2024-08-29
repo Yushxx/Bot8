@@ -17,7 +17,6 @@ function generateMineSequence() {
     // Créer une séquence de 5x5 cases
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < cols; j++) {
-            // Déterminer si la case contient une mine ou non
             const isMine = Math.random() < 0.2 && totalMineCount < 5; // 20% de chance d'être une mine
             if (isMine) {
                 totalMineCount++;
@@ -75,7 +74,6 @@ ${generateMineSequence()}
 [Comment jouer](https://t.me/c/1594256026/1617)
 `;
 
-    // Options du clavier inline
     const inlineKeyboard = {
         inline_keyboard: [
             [
@@ -85,9 +83,10 @@ ${generateMineSequence()}
         ]
     };
 
-    // Envoi du message dans le canal Mine
     try {
-        bot.sendMessage(chatId, sequenceMessage, { parse_mode: 'Markdown', reply_markup: inlineKeyboard });
+        bot.sendMessage(chatId, sequenceMessage, { parse_mode: 'Markdown', reply_markup: inlineKeyboard })
+            .then(() => console.log('Séquence Mines envoyée avec succès'))
+            .catch(error => console.error(`Erreur lors de l'envoi de la séquence Mines: ${error.message}`));
     } catch (error) {
         console.error(`Erreur lors de l'envoi du message: ${error.message}`);
     }
@@ -107,7 +106,6 @@ ${sequenceTemplateApple}
 [tuto french](https://t.me/c/2035790146/9350)
 `;
 
-    // Options du clavier inline
     const inlineKeyboard = {
         inline_keyboard: [
             [
@@ -117,9 +115,10 @@ ${sequenceTemplateApple}
         ]
     };
 
-    // Envoi du message dans le canal Apple
     try {
-        bot.sendMessage(chatId, sequenceMessage, { parse_mode: 'Markdown', reply_markup: inlineKeyboard });
+        bot.sendMessage(chatId, sequenceMessage, { parse_mode: 'Markdown', reply_markup: inlineKeyboard })
+            .then(() => console.log('Séquence Apple envoyée avec succès'))
+            .catch(error => console.error(`Erreur lors de l'envoi de la séquence Apple: ${error.message}`));
     } catch (error) {
         console.error(`Erreur lors de l'envoi du message: ${error.message}`);
     }
@@ -129,6 +128,7 @@ ${sequenceTemplateApple}
 const scheduledTimesMorning = ['0 8 * * *', '0 10 * * *', '0 12 * * *'];
 scheduledTimesMorning.forEach(time => {
     schedule.scheduleJob(time, () => {
+        console.log(`Envoi des séquences prévu pour le matin à ${time}`);
         sendSequenceToMineChannel('-1001594256026'); // Canal Mine ID
         sendSequenceToAppleChannel('-1002035790146'); // Canal Apple ID
     });
@@ -138,6 +138,7 @@ scheduledTimesMorning.forEach(time => {
 const scheduledTimesEvening = ['0 15 * * *', '0 17 * * *', '0 19 * * *'];
 scheduledTimesEvening.forEach(time => {
     schedule.scheduleJob(time, () => {
+        console.log(`Envoi des séquences prévu pour le soir à ${time}`);
         sendSequenceToMineChannel('-1001594256026'); // Canal Mine ID
         sendSequenceToAppleChannel('-1002035790146'); // Canal Apple ID
     });
@@ -147,6 +148,7 @@ scheduledTimesEvening.forEach(time => {
 const scheduledTimesNight = ['0 21 * * *', '0 22 * * *', '0 23 * * *'];
 scheduledTimesNight.forEach(time => {
     schedule.scheduleJob(time, () => {
+        console.log(`Envoi des séquences prévu pour la nuit à ${time}`);
         sendSequenceToMineChannel('-1001594256026'); // Canal Mine ID
         sendSequenceToAppleChannel('-1002035790146'); // Canal Apple ID
     });
