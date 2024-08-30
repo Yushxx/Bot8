@@ -125,7 +125,7 @@ ${sequenceTemplateApple}
 }
 
 // Planification des signaux pour la session du matin (8h00 - 13h00)
-const scheduledTimesMorning = ['0 8 * * *', '0 10 * * *', '0 12 * * *'];
+const scheduledTimesMorning = ['0 8 * * *', '6 10 * * *', '0 12 * * *'];
 scheduledTimesMorning.forEach(time => {
     schedule.scheduleJob(time, () => {
         console.log(`Envoi des séquences prévu pour le matin à ${time}`);
