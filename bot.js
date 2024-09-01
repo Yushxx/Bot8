@@ -68,7 +68,7 @@ function sendSequenceToMineChannel(chatId) {
 ${sequenceTemplateMine}
 ${generateMineSequence()}
 
-🚨 FONCTIONNE UNIQUEMENT SUR 1XBET, MELBET & LINEBET AVEC LE CODE PROMO \`ZFree221\` ✅️ !
+🚨 FONCTIONNE UNIQUEMENT SUR 1XBET, MELBET, MEGA PARIS & LINEBET AVEC LE CODE PROMO \`ZFree221\` ✅️ !
 
 [S'inscrire](https://bit.ly/3NJ4vy0)
 [Comment jouer](https://t.me/c/1594256026/1617)
@@ -101,7 +101,7 @@ ${sequenceTemplateApple}
 1.54:${generateAppleSequence()}
 1.23:${generateAppleSequence()}
 
-🚨 *Attention* the signals only work on [Melbet](https://bit.ly/3Wk9323), 1xbet and Linebet with promo code \`ZFree221\` ✅️!
+🚨 *Attention* the signals only work on melbet megaparis 1xbet and Linebet with promo code \`ZFree221\` ✅️!
 
 [tuto french](https://t.me/c/2035790146/9350)
 `;
