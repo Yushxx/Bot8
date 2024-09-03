@@ -101,7 +101,7 @@ ${sequenceTemplateApple}
 1.54:${generateAppleSequence()}
 1.23:${generateAppleSequence()}
 🚀 \`\`\`♦️Attention_the_signal_only_works_on\n melbet, megaparis,\n 1xbet, and Linebet \n with the promo code ZFree221\`\`\` 
-comment jouer👇
+Guide 👇
 [tuto en français](https://t.me/c/2035790146/9350)
 `;
 
