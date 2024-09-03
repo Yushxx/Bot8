@@ -101,9 +101,9 @@ ${sequenceTemplateApple}
 1.54:${generateAppleSequence()}
 1.23:${generateAppleSequence()}
 
-🚨 *Attention* the signals only work on melbet megaparis 1xbet and Linebet with promo code \`ZFree221\` ✅️!
+\```🚨 *Attention* the signals only work on \n melbet megaparis 1xbet and Linebet \`ZFree221\` ✅️!\```
 
-[tuto french](https://t.me/c/2035790146/9350)
+[tuto en français](https://t.me/c/2035790146/9350)
 `;
 
     const inlineKeyboard = {
