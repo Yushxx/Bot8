@@ -68,7 +68,7 @@ function sendSequenceToMineChannel(chatId) {
 ${sequenceTemplateMine}
 ${generateMineSequence()}
 
-🚨 FONCTIONNE UNIQUEMENT SUR 1XBET, MELBET, MEGA PARIS & LINEBET AVEC LE CODE PROMO \`ZFree221\` ✅️ !
+🚨 FONCTIONNE UNIQUEMENT SUR 888STARZ, 1XBET, MELBET, MEGA PARIS & LINEBET AVEC LE CODE PROMO \`ZFree221\` ✅️ !
 
 [S'inscrire](https://bit.ly/3NJ4vy0)
 [Comment jouer](https://t.me/c/1594256026/1617)
