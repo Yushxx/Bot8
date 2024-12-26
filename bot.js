@@ -101,8 +101,7 @@ ${sequenceTemplateApple}
 1.54:${generateAppleSequence()}
 1.23:${generateAppleSequence()}
 
-🔺️
-\`\`\` Attention les signaux fonctionne uniquement sur Linebet et 1xbet  \n  avec le promo code ZFree221\`\`\` 
+🔺️Attention les signaux fonctionne uniquement sur Linebet et 1xbet  \n  avec le promo code ZFree221
 Guide 👇
 [Tuto ](https://t.me/c/2035790146/11014)
 `;
