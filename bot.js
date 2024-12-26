@@ -101,17 +101,17 @@ ${sequenceTemplateApple}
 1.54:${generateAppleSequence()}
 1.23:${generateAppleSequence()}
 
-🔺️Attention the signal only works on
-\`\`\` Linebet and 1xbet  \n with the promo code ZFree221\`\`\` 
+🔺️
+\`\`\` Attention le signal ne fonctionne que sur Linebet and 1xbet  \n  avec le promo code ZFree221\`\`\` 
 Guide 👇
-[Tuto en Français](https://t.me/c/2035790146/9350)
+[Tuto ](https://t.me/c/2035790146/11014)
 `;
 
     const inlineKeyboard = {
         inline_keyboard: [
             [
                 { text: 'Register', url: 'https://bit.ly/3v6rgFc' },
-                { text: 'How to play', url: 'https://t.me/c/2035790146/9606' }
+                { text: 'Comment jouer', url: 'https://t.me/c/2035790146/11014' }
             ]
         ]
     };
